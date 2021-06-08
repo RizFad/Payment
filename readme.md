@@ -56,3 +56,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## ATTENTION 
+SEBELUM MENJALANKAN INI ADA HARUS MEMBUAT DATABASE qrcode LALU IMPOR DATABASE DI REPO INI DENGAN NAMA qrcode.sql 
+TERIMA KASIH
