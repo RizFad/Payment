@@ -20,9 +20,9 @@
                     </a>
                 </td>
                 <td>{!! $transaction->user['name'] !!}</td>
-                <td>{{ $transaction->payment_method }}</td>
-                <td>${{ $transaction->amount }}</td>
-                <td>{{ $transaction->status }}</td>
+                <td>{!! $transaction->payment_method !!}</td>
+                <td>${!! $transaction->amount !!}</td>
+                <td>{!! $transaction->status !!}</td>
                 
             </tr>
         @endforeach

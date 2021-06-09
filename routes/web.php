@@ -31,3 +31,8 @@ Route::group(['middleware'=>'auth'], function () {
     Route::resource('users', 'UserController');    
     
 });
+
+
+Route::resource('accounts', 'AccountController');
+
+Route::resource('accountHistories', 'AccountHistoryController');
