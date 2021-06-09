@@ -57,11 +57,10 @@ class QrcodeController extends AppBaseController
      * @return Response
      */
     public function store(CreateQrcodeRequest $request)
-    {
+    {    
         $input = $request->all();
-
+        //generate qrcode
         $qrcode = $this->qrcodeRepository->create($input);
-
         //generate pada qrcode
         //menyimpan barcode dari qrcode
         $file = 'generated_qrcodes/'.$qrcode->id.'.png';    

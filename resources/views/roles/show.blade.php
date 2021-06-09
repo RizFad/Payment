@@ -2,11 +2,16 @@
 
 @section('content')
     <section class="content-header">
-        <h1>
+        <h1 class="pull-left">
             Role
+        </h1>
+        <h1 claas="pull-right">
+        <a href="{{ route('roles.edit', [$role->id]) }}" 
+        class='btn btn-primary pull-right'>Edit Role</a>
         </h1>
     </section>
     <div class="content">
+    <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">

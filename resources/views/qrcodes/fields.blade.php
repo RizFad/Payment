@@ -1,4 +1,5 @@
 <!-- User Id Field -->
+
 {!! Form::hidden('user_id', Auth::user()->id, ['class' => 'form-control']) !!}
 
 <!-- Website Field -->
@@ -39,7 +40,7 @@
 
 <!-- Amount Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('amount', 'Amount (Rp):') !!}
+    {!! Form::label('amount', 'Amount (Rp.):') !!}
     {!! Form::number('amount', null, ['class' => 'form-control']) !!}
 </div>
 

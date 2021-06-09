@@ -41,7 +41,13 @@
         <p>{{ $qrcode->website }}</p>
     </div>   
 
-    
+<!-- Product Url Field -->
+<div class="form-group">
+    <div class="form-group">
+        {!! Form::label('product_url', 'Product Url:') !!}
+        <p>{{ $qrcode->product_url }}</p>
+    </div>
+</div>
 
     <!-- Callback Url Field -->
     <div class="form-group">
