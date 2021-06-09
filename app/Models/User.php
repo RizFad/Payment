@@ -64,5 +64,9 @@ class User extends Model
         'password' => 'required'
     ];
 
-    
+    //Relasi dengan transaksi
+    public function transactions()
+    {
+        return $this->hasMany('App\Models\Transaction');
+    }
 }

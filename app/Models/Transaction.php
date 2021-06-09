@@ -70,5 +70,16 @@ class Transaction extends Model
         'status' => 'required'
     ];
 
+    //relasi dengan qrcode
+    public function qrcode()
+    {
+        return $this->belongsTo('App\Models\Qrcode');
+    }
     
+    //relasi dengan user
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
 }

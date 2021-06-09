@@ -30,8 +30,10 @@
 
 <!-- Product Url Field -->
 <div class="form-group">
-    {!! Form::label('product_url', 'Product Url:') !!}
-    <p>{{ $qrcode->product_url }}</p>
+    <div class="form-group">
+        {!! Form::label('product_url', 'Product Url:') !!}
+        <p>{{ $qrcode->product_url }}</p>
+    </div>
 </div>
 
 <!-- Callback Url Field -->
