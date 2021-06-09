@@ -163,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+         
 
         /*
          * Package Service Providers...
@@ -181,6 +182,8 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class, 
+        Barryvdh\DomPDF\ServiceProvider::class,
+        LaravelQRCode\Providers\QRCodeServiceProvider::class, 
 
     ],
 
@@ -233,6 +236,8 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,    
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'QRCode' => LaravelQRCode\Facades\QRCode::class,  
     ],
 
 ];

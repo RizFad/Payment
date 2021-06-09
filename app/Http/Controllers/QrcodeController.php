@@ -8,6 +8,9 @@ use App\Repositories\QrcodeRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use QRCode;
+use App\Models\Qrcode as QrcodeModel;
+use Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -59,9 +62,29 @@ class QrcodeController extends AppBaseController
 
         $qrcode = $this->qrcodeRepository->create($input);
 
-        Flash::success('Qrcode saved successfully.');
+        //generate pada qrcode
+        //menyimpan barcode dari qrcode
+        $file = 'generated_qrcodes/'.$qrcode->id.'.png';    
+        $newQrcode = QRCode::text("message")
+        ->setSize(8)
+        ->setMargin(2)
+        ->setOutFile($file)
+        ->png();
+        $input['qrcode_path'] = $file;            
 
-        return redirect(route('qrcodes.index'));
+        $newQrcode = QrcodeModel::where('id', $qrcode->id)
+                    ->update([
+                        'qrcode_path' => $input['qrcode_path']
+                    ]);
+
+        if ($newQrcode) {            
+
+            Flash::success('Qrcode saved successfully.');
+        }else {
+            Flash::error('Qrcode failed to save successfully.');
+        }        
+
+        return redirect(route('qrcodes.show', ['qrcode' => $qrcode]));
     }
 
     /**
