@@ -69,4 +69,25 @@ class User extends Model
     {
         return $this->hasMany('App\Models\Transaction');
     }
+
+    public function qrcodes()
+    {
+        return $this->hasMany('App\Models\Qrcode');
+    }
+
+    //relasi dengan role
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
+
+    public function account()
+    {
+        return $this->hasMany('App\Models\Account');
+    }
+
+    public function account_histories()
+    {
+        return $this->hasMany('App\Models\AccountHistory');
+    }
 }

@@ -13,7 +13,7 @@
 <!-- Amount Field -->
 <div class="form-group">
     {!! Form::label('amount', 'Amount:') !!}
-    <p>${!! $transaction->amount !!}</p>
+    <p>Rp.{!! $transaction->amount !!}</p>
 </div>
 
 <!-- User Id Field -->

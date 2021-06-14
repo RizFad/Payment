@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class AccountRepository
  * @package App\Repositories
- * @version June 9, 2021, 5:51 pm UTC
+ * @version June 13, 2021, 10:01 am UTC
  *
  * @method Account findWithoutFail($id, $columns = ['*'])
  * @method Account find($id, $columns = ['*'])
@@ -25,11 +25,10 @@ class AccountRepository extends BaseRepository
         'total_credit',
         'total_debit',
         'withdrawal_method',
-        'payment_email',
         'bank_name',
         'bank_branch',
         'bank_account',
-        'applied_for_layout',
+        'applied_for_payout',
         'paid',
         'last_date_applied',
         'last_date_paid',

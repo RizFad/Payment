@@ -57,5 +57,9 @@ class AccountHistory extends Model
         'message' => 'required'
     ];
 
-    
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

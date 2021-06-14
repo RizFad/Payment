@@ -55,7 +55,7 @@
         "inIndex": true
     },
     {
-        "name": "withdrawl",
+        "name": "withdrawl_method",
         "dbType": "string,255",
         "htmlType": "text",
         "validations": "required",
@@ -66,21 +66,10 @@
         "inIndex": true
     },
     {
-        "name": "payment_email",
-        "dbType": "string,255:nullable",
-        "htmlType": "text",
-        "validations": null,
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
         "name": "bank_name",
-        "dbType": "string,255:nullable",
+        "dbType": "string,255",
         "htmlType": "text",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -89,9 +78,9 @@
     },
     {
         "name": "bank_branch",
-        "dbType": "string,255:nullable",
+        "dbType": "string,255",
         "htmlType": "text",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -100,9 +89,9 @@
     },
     {
         "name": "bank_account",
-        "dbType": "string,255:nullable",
+        "dbType": "string,255",
         "htmlType": "text",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -110,7 +99,7 @@
         "inIndex": true
     },
     {
-        "name": "applied_for_layout",
+        "name": "applied_for_payout",
         "dbType": "integer,false",
         "htmlType": null,
         "validations": "required",
@@ -133,9 +122,9 @@
     },
     {
         "name": "last_date_applied",
-        "dbType": "date:nullable",
+        "dbType": "date",
         "htmlType": "date",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -144,9 +133,9 @@
     },
     {
         "name": "last_date_paid",
-        "dbType": "date:nullable",
+        "dbType": "date",
         "htmlType": "date",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -155,9 +144,9 @@
     },
     {
         "name": "country",
-        "dbType": "string,255:nullable",
+        "dbType": "string,255",
         "htmlType": "text",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -166,9 +155,9 @@
     },
     {
         "name": "other_details",
-        "dbType": "text:nullable",
+        "dbType": "text",
         "htmlType": "textarea",
-        "validations": null,
+        "validations": "required",
         "searchable": true,
         "fillable": true,
         "primary": false,

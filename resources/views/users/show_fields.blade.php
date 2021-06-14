@@ -1,8 +1,3 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $user->id }}</p>
-</div>
 
 <!-- Name Field -->
 <div class="form-group">
@@ -12,8 +7,8 @@
 
 <!-- Roles Id Field -->
 <div class="form-group">
-    {!! Form::label('roles_id', 'Roles Id:') !!}
-    <p>{{ $user->roles_id }}</p>
+    {!! Form::label('roles_id', 'User Level:') !!}
+    <p>{!! $user->roles_id !!}</p>
 </div>
 
 <!-- Email Field -->
@@ -22,27 +17,21 @@
     <p>{{ $user->email }}</p>
 </div>
 
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Password:') !!}
-    <p>{{ $user->password }}</p>
-</div>
-
-<!-- Remember Token Field -->
-<div class="form-group">
-    {!! Form::label('remember_token', 'Remember Token:') !!}
-    <p>{{ $user->remember_token }}</p>
-</div>
-
 <!-- Created At Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $user->created_at }}</p>
+    {!! Form::label('created_at', 'Joined:') !!}
+    <p>{{ $user->created_at->format('D d, M, Y h:i') }}</p>
 </div>
 
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $user->updated_at }}</p>
-</div>
+@if ($user->id == Auth::user()->id || Auth::user()->role_id < 3)
+            
+    <div class="col-xs-12">
+        <h3 class="text-center">Transaksi</h3>
+        @include('transactions.table')
+    </div>
 
+    <div class="col-xs-12">
+        <h3 class="text-center">QRCode</h3>
+        @include('qrcodes.table')
+    </div>
+@endif

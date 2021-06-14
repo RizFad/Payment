@@ -1,8 +1,7 @@
 <div class="table-responsive">
     <table class="table" id="transactions-table">
         <thead>
-            <tr>
-                <th>ID</th>
+            <tr>                
                 <th>Qrcode</th>
                 <th>Pembeli</th>
                 <th>Metode Pembayaran</th>
@@ -12,8 +11,7 @@
         </thead>
         <tbody>
         @foreach($transactions as $transaction)
-            <tr>
-                <td>{{ $transaction->id }}</td>
+            <tr>                
                 <td>
                     <a href="{!! route('transactions.show', [$transaction->id]) !!}">
                         {!! $transaction->qrcode['product_name'] !!}

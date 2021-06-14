@@ -8,18 +8,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Account
  * @package App\Models
- * @version June 9, 2021, 5:51 pm UTC
+ * @version June 13, 2021, 10:01 am UTC
  *
  * @property integer user_id
  * @property number balance
  * @property number total_credit
  * @property number total_debit
  * @property string withdrawal_method
- * @property string payment_email
  * @property string bank_name
  * @property string bank_branch
  * @property string bank_account
- * @property integer applied_for_layout
+ * @property integer applied_for_payout
  * @property integer paid
  * @property string last_date_applied
  * @property string last_date_paid
@@ -46,11 +45,10 @@ class Account extends Model
         'total_credit',
         'total_debit',
         'withdrawal_method',
-        'payment_email',
         'bank_name',
         'bank_branch',
         'bank_account',
-        'applied_for_layout',
+        'applied_for_payout',
         'paid',
         'last_date_applied',
         'last_date_paid',
@@ -70,11 +68,10 @@ class Account extends Model
         'total_credit' => 'float',
         'total_debit' => 'float',
         'withdrawal_method' => 'string',
-        'payment_email' => 'string',
         'bank_name' => 'string',
         'bank_branch' => 'string',
         'bank_account' => 'string',
-        'applied_for_layout' => 'integer',
+        'applied_for_payout' => 'integer',
         'paid' => 'integer',
         'last_date_applied' => 'date',
         'last_date_paid' => 'date',
@@ -92,14 +89,25 @@ class Account extends Model
         'balance' => 'required',
         'total_credit' => 'required',
         'total_debit' => 'required',
-        'withdrawl' => 'required',
-        'applied_for_layout' => 'required',
-        'paid' => 'required'
+        'withdrawl_method' => 'required',
+        'bank_name' => 'required',
+        'bank_branch' => 'required',
+        'bank_account' => 'required',
+        'applied_for_payout' => 'required',
+        'paid' => 'required',
+        'last_date_applied' => 'required',
+        'last_date_paid' => 'required',
+        'country' => 'required',
+        'other_details' => 'required'
     ];
 
     public function user()
     {
-        return $this->hasOne('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
-    
+
+    public function account_histories()
+    {
+        return $this->hasMany('App\Models\AccountHistory');
+    }
 }
