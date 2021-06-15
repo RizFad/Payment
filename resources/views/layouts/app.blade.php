@@ -35,7 +35,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>KREDITISIUS</b>
+                <b>DONO PAYMENT</b>
             </a>
 
             <!-- Header Navbar -->
@@ -118,7 +118,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    InfyOm Generator
+                    DONO PAYMENT
                 </a>
             </div>
 

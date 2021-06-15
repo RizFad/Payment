@@ -42,3 +42,5 @@ Route::get('/accountHistories/create', 'AccountHistoryController@create')
 ->name('accountHistories.create')->middleware('checkadmin');
 
 Route::get("/qrcodes/{id}", 'QrcodeController@show')->name('qrcodes.show');
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');

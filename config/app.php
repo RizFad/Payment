@@ -184,6 +184,7 @@ return [
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class, 
         Barryvdh\DomPDF\ServiceProvider::class,
         LaravelQRCode\Providers\QRCodeServiceProvider::class, 
+        Unicodeveloper\Paystack\PaystackServiceProvider::class,
 
     ],
 
@@ -238,6 +239,7 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,    
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'QRCode' => LaravelQRCode\Facades\QRCode::class,  
+        'Paystack' => Unicodeveloper\Paystack\Facades\Paystack::class,
     ],
 
 ];

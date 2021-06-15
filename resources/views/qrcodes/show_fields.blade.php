@@ -89,7 +89,21 @@
             <img src="{{asset($qrcode->qrcode_path)}}">
             </p>
         </div>
+
+@include('qrcodes.paystack-form')
+<form method="post" role="form" class="col-md-6" action="{{ route('qrcodes.show_payment_page') }}">
+    
+    <input type="hidden" name="qrcode_id" value="{{ $qrcode->id }}">
+    <p>
+        <button class="btn btn-success btn-lg" type="submit" value="Pay Now!">  
+            <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
+        </button>
+    </p>
+</form>
+
 </div>
+</div>
+<div class="clearfix"></div>
 
     @if (!Auth::guest() && ($qrcode->user_id == Auth::user()->id || Auth::user()->role_id < 3))
             
