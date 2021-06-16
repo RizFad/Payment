@@ -28,7 +28,7 @@ class DynamicPDFController extends Controller
 
     public function cetakPdf()
     {
-        $pdf =\App::make('dompdf.wrapper');
+        $pdf =Transaction::make('dompdf.wrapper');
         $pdf->loadHTML($this->convert_transaksi_to_html());
         return $pdf->stream();
     }
