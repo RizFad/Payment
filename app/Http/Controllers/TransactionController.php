@@ -33,10 +33,12 @@ class TransactionController extends AppBaseController
     {
         //hanya admin yang bisa melihat semua data transaksi
         if(Auth::user()->role_id < 3){
+            Flash::success('Transaksi Dari Semua User');
             $this->transactionRepository->pushCriteria(new RequestCriteria($request));
             $transactions = $this->transactionRepository->all();
         }else {
-            $transactions = Transaction::where('user_id', Auth::user()->id)->get();
+            Flash::success('Transaksi Saya');
+            $transactions = Transaction::where('user_id', Auth::user()->id)->latest()->get();
         }
         return view('transactions.index')
             ->with('transactions', $transactions);

@@ -13,6 +13,8 @@ use App\Models\Qrcode as QrcodeModel;
 use Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\User;
+use App\Models\Transaction;
 
 class QrcodeController extends AppBaseController
 {
@@ -48,7 +50,8 @@ class QrcodeController extends AppBaseController
 
         $input = $request->all();
 
-        $user = User::where('email', $input['email']->first());
+        $user = User::where('email', $input['email'])->first();
+
         if(empty($user)){
             $user = User::create([
                 'name' => $input['email'],
@@ -56,8 +59,9 @@ class QrcodeController extends AppBaseController
                 'password' => Hash::make($input['email']),
             ]);
         }
-        
-        $qrcode = QrcodeModel::where('id', $input['qrcode_id'])->first();
+                
+        $qrcode = QrcodeModel::where('id', $input['qrcode_id'])->first();        
+
         $transaction = Transaction::create([
             'user_id' => $user->id,
             'qrcode_id' => $qrcode->id,
@@ -67,7 +71,7 @@ class QrcodeController extends AppBaseController
             'amount' => $qrcode->amount
 
         ]);
-        return view('qrcodes.paystack-form',['qrcode'=> $qrcode, 'transaction' => $transaction, 'user' => $user]);;
+        return view('qrcodes.paystack-form',['qrcode'=> $qrcode, 'transaction'=>$transaction, 'user' => $user]);;
     }
     /**
      * Show the form for creating a new Qrcode.

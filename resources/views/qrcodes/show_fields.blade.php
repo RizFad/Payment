@@ -81,7 +81,7 @@
 @endif  
 </div>
 
-<div class="col-md-5 pull-right">
+    <div class="col-md-5 pull-right">
         <!-- Qrcode Path Field -->
         <div class="form-group">
             {!! Form::label('qrcode_path', 'Scan QRCode Ini Untuk Melakukan Pembayaran:') !!}
@@ -90,20 +90,35 @@
             </p>
         </div>
 
-@include('qrcodes.paystack-form')
-<form method="post" role="form" class="col-md-6" action="{{ route('qrcodes.show_payment_page') }}">
-    
-    <input type="hidden" name="qrcode_id" value="{{ $qrcode->id }}">
-    <p>
-        <button class="btn btn-success btn-lg" type="submit" value="Pay Now!">  
-            <i class="fa fa-plus-circle fa-lg"></i> Pay Now!
-        </button>
-    </p>
-</form>
 
-</div>
-</div>
-<div class="clearfix"></div>
+        <form method="POST" role="form" class="col-md-6" action="{{ route('qrcodes.show_payment_page') }}">
+
+            <div class="form-group">
+                    @if (Auth::guest())
+                    {{-- hanya untuk user log out  --}}
+                        <label for="email"> Masukkan Emailmu Dengan Benar </label>
+                            <input type="email" name="email" id="email" required class="form-control" placeholder="jokowithehunter@gmail.com">                      
+                        </div>
+
+                        @else
+                        <input type="hidden" name="email" value="{{ Auth::user()->email }}">                      
+                        @endif
+                        {{ csrf_field() }}
+
+    <input type="hidden" name="qrcode_id" value="{{ $qrcode->id }}">  
+
+            <p>
+                <button class="btn btn-success btn-lg" type="submit" value="Pay Now!">
+                    <i class="fa fa-plus-circle fa-lg"></i> Bayar Sekarang!
+                </button>
+            </p>
+        </form>
+
+
+    </div> 
+</div> 
+
+    <div class="clearfix"> </div>
 
     @if (!Auth::guest() && ($qrcode->user_id == Auth::user()->id || Auth::user()->role_id < 3))
             

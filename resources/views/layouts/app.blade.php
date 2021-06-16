@@ -34,7 +34,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="{!! url('/home') !!}" class="logo">
                 <b>DONO PAYMENT</b>
             </a>
 
