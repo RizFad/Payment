@@ -22,7 +22,17 @@
 
                 </td>
                 <td>{{ $user->email }}</td> 
-                <td>{{ $user->role_id }}</td>            
+                <td>
+                    @if ($user->role_id == 1)                
+                        Admin
+                    @elseif($user->role_id == 2)                
+                        Supervisor
+                    @elseif($user->role_id == 3)                
+                        Webmaster
+                    @elseif($user->role_id == 4)                
+                        User                            
+                    @endif
+                </td>            
             
             @if (Auth::user()->role_id < 3) 
                 <td>

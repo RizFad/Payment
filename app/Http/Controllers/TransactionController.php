@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Models\Transaction;
 use Auth;
+use PDF;
 
 class TransactionController extends AppBaseController
 {
@@ -159,5 +160,13 @@ class TransactionController extends AppBaseController
         Flash::success('Transaction deleted successfully.');
 
         return redirect(route('transactions.index'));
+    }
+
+
+    public function cetakPdf()
+    {
+        $transaction = Transaction::all();
+        $pdf = PDF::loadview('transactions.cetak-transaksi', ['transaction'=>$transaction]);
+        return $pdf->stream();
     }
 }

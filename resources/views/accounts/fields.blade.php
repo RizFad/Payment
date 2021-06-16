@@ -1,3 +1,9 @@
+<!-- User ID Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('user_id', 'User ID:') !!}
+    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+</div>
+
 @if(Auth::user()->role_id==1)
 <!-- Balance Field -->
 <div class="form-group col-sm-6">

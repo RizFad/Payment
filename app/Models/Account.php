@@ -92,11 +92,8 @@ class Account extends Model
         'withdrawl_method' => 'required',
         'bank_name' => 'required',
         'bank_branch' => 'required',
-        'bank_account' => 'required',
-        'applied_for_payout' => 'required',
-        'paid' => 'required',
-        'last_date_applied' => 'required',
-        'last_date_paid' => 'required',
+        'bank_account' => 'required',        
+        'paid' => 'required',        
         'country' => 'required',
         'other_details' => 'required'
     ];

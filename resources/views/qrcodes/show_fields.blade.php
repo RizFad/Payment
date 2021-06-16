@@ -31,7 +31,7 @@
     <!-- User Id Field -->
     <div class="form-group">
         {!! Form::label('user_id', 'User Name:') !!}
-        <p>{{ $qrcode->user_id }}</p>
+        <p>{{ $qrcode->user['name'] }}</p>
     </div> 
 
     <!-- Website Field -->
@@ -103,7 +103,7 @@
                         @else
                         <input type="hidden" name="email" value="{{ Auth::user()->email }}">                      
                         @endif
-                        {{ csrf_field() }}
+                        
 
     <input type="hidden" name="qrcode_id" value="{{ $qrcode->id }}">  
 

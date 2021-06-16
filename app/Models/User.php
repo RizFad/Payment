@@ -58,10 +58,8 @@ class User extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required',
-        'roles_id' => 'required',
-        'email' => 'required',
-        'password' => 'required'
+        'name' => 'required',        
+        'email' => 'required'        
     ];
 
     //Relasi dengan transaksi

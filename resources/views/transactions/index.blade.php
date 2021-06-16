@@ -21,6 +21,11 @@
         <div class="text-center">
         
         </div>
+        <div class="col-md-5">
+            <a href="{{ route('transactions.cetak-transaksi') }}" class="btn btn-danger">Convert PDF</a>
+        </div>
+        <br/>
+        <br/>
     </div>
 @endsection
 

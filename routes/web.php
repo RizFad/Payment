@@ -29,6 +29,7 @@ Route::group(['middleware'=>'auth'], function () {
     Route::resource('accounts', 'AccountController')->except(['show']);    
     Route::get('/accounts/show/{id?}', 'AccountController@show')->name('accounts.show');
     Route::resource('accountHistories', 'AccountHistoryController');
+    Route::get('/transactions/cetak-pdf', 'TransactionController@cetakPdf')->name('transactions.cetak-transaksi');  
     
 });
 

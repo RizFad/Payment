@@ -4,24 +4,6 @@
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-@if (Auth::user()->roles_id < 3)
-        <!-- Roles Id Field -->
-        {{-- <div class="form-group col-sm-6">
-            {!! Form::label('roles_id', 'User Level:') !!}
-            {!! Form::number('roles_id', null, ['class' => 'form-control']) !!}
-        </div> --}}
-
-        <div class="form-group col-sm-6">
-                <label for="sel1">User Level:</label>
-                <select class="form-control" id="sel1">
-                {{-- <option value="{{$user->role['id']}}">{{$role['name']}}</option> --}}
-
-                    @foreach ($roles as $role)
-                        <option value="{{$role['id']}}">{{$role['name']}}</option>
-                    @endforeach
-                </select>
-        </div>
-@endif
 
 <!-- Email Field -->
 <div class="form-group col-sm-6">
@@ -29,11 +11,11 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Password Field -->
+{{-- <!-- Password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password', 'Password:') !!}
     {!! Form::password('password', ['class' => 'form-control']) !!}
-</div>
+</div> --}}
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

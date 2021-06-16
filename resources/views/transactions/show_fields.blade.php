@@ -68,7 +68,7 @@
     <!-- Status Field -->
     <div class="form-group">
         {!! Form::label('status', 'Status:') !!}
-        <p>{{ $transaction->status }}</p>
+        <p>Completed</p>
     </div>
 
     <!-- Created At Field -->

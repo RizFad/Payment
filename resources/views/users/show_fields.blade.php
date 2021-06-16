@@ -8,7 +8,15 @@
 <!-- Roles Id Field -->
 <div class="form-group">
     {!! Form::label('roles_id', 'User Level:') !!}
-    <p>{!! $user->roles_id !!}</p>
+    <p>@if ($user->role_id == 1)                
+        Admin
+    @elseif($user->role_id == 2)                
+        Supervisor
+    @elseif($user->role_id == 3)                
+        Webmaster
+    @elseif($user->role_id == 4)                
+        User                            
+    @endif</p>
 </div>
 
 <!-- Email Field -->

@@ -18,13 +18,13 @@
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i>
                     
-                    @if (Auth::user()->roles_id == 1)                
+                    @if (Auth::user()->role_id == 1)                
                         Admin
-                    @elseif(Auth::user()->roles_id == 2)                
+                    @elseif(Auth::user()->role_id == 2)                
                         Supervisor
-                    @elseif(Auth::user()->roles_id == 3)                
+                    @elseif(Auth::user()->role_id == 3)                
                         Teknisi
-                    @elseif(Auth::user()->roles_id == 4)                
+                    @elseif(Auth::user()->role_id == 4)                
                         User                            
                     @endif
 

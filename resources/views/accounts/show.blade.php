@@ -11,7 +11,7 @@
             </small>
         </h1>
         <h1 class="pull-right">
-        @if(Auth::user()->id == $account->user_id && $account->applied_for_payout != 1)
+        {{-- @if(Auth::user()->id == $account->user_id && $account->applied_for_payout != 1)
             {!! Form::open(['route' => ['accounts.apply_for_payout', $account->id], 'method' => 'post', 'class'=>'pull-left']) !!}            
             <input type="hidden" value="{{ $account->id}}" name="apply_for_payout" />
             {!! Form::button('<i class="fa fa-credit-card"></i> Apply for payout', ['type' => 'submit', 'class' => 'btn btn-primary', 'onclick' => "return confirm('Are you sure you wish to apply for payout?')"]) !!}                    
@@ -24,7 +24,7 @@
             {!! Form::button('<i class="glyphicon glyphicon-ok"></i> Mark as payout', ['type' => 'submit', 'class' => 'btn btn-primary', 'onclick' => "return confirm('Are you sure you wish to confirm payout?')"]) !!}                    
             {!! Form::close() !!}
         @endif
-        </h1>
+        </h1> --}}
         <br>
     </section>
     <div class="content">
