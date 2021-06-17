@@ -13,7 +13,7 @@
         <tbody>
         @foreach($accounts as $account)
             <tr>
-                @if (Auth::user()->role_id == 1)
+                @if (Auth::user()->role_id < 3)
                     
                 <td>
                 <a href="{{ route('accounts.show', [$account->id]) }}">

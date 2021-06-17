@@ -19,12 +19,12 @@ class UserController extends AppBaseController
     /** @var  UserRepository */
     private $userRepository;
 
-    public function cetak_pdf()
-    {
-        // $users = User::all();
-        // $pdf = PDF::loadview('users.cetak_pdf', ['users'=>$users]);
-        // return $pdf->stream();
-    }
+    // public function cetak_pdf()
+    // {
+    //     // $users = User::all();
+    //     // $pdf = PDF::loadview('users.cetak_pdf', ['users'=>$users]);
+    //     // return $pdf->stream();
+    // }
 
     public function __construct(UserRepository $userRepo)
     {

@@ -1,13 +1,18 @@
 {{-- All Users --}}
+
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{{ route('users.show',['id' => Auth::user()->id]) }}"><i class="fa fa-address-card"></i>
         <span>My Profile</span></a>
 </li>
 
-<li class="{{ Request::is('accounts*') ? 'active' : '' }}">
-    <a href="{{ route('accounts.show') }}">
-    <i class="fa fa-user-circle"></i><span>My Account</span></a>
-</li>
+{{-- User --}}
+@if (Auth::user()->role_id == 4)
+    <li class="{{ Request::is('accounts*') ? 'active' : '' }}">
+        <a href="{{ route('accounts.show') }}">
+        <i class="fa fa-user-circle"></i><span>My Account</span></a>
+    </li>    
+@endif
+
 
 <li class="{{ Request::is('transactions*') ? 'active' : '' }}">
     <a href="{{ route('transactions.index') }}"><i class="fa fa-archive"></i><span>Transactions</span></a>

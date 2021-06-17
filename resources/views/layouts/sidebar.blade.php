@@ -23,7 +23,7 @@
                     @elseif(Auth::user()->role_id == 2)                
                         Supervisor
                     @elseif(Auth::user()->role_id == 3)                
-                        Teknisi
+                        Webmaster
                     @elseif(Auth::user()->role_id == 4)                
                         User                            
                     @endif

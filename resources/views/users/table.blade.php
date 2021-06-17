@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="users-table">
+    <table class="table" id="users-table">                    
         <thead>
             <tr>
                 <th>Name</th>        
@@ -48,5 +48,6 @@
             </tr>
         @endforeach
         </tbody>
+        
     </table>
 </div>
