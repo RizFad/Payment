@@ -21,9 +21,9 @@
             <td>Rp.{{ $qrcode->amount }}</td>
             <td>
                 @if ($qrcode->status == 1)
-                    <i class="fas fa-check-square text-green"></i>
+                    <i class="fa fa-check-square text-green"></i>
                 @else 
-                <i class="fas fa-times-circle text-red"></i>
+                <i class="fa fa-times-circle text-red"></i>
                 @endif
             </td>
                 <td>

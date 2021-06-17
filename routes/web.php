@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +31,8 @@ Route::group(['middleware'=>'auth'], function () {
     Route::resource('accounts', 'AccountController')->except(['show']);    
     Route::get('/accounts/show/{id?}', 'AccountController@show')->name('accounts.show');
     Route::resource('accountHistories', 'AccountHistoryController');
-    Route::get('/transactions/cetak-pdf', 'TransactionController@cetakPdf')->name('transactions.cetak-transaksi');  
+    
+    
     
 });
 
@@ -50,3 +53,6 @@ Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 Route::post('/qrcodes/show_payment_page', 'QrcodeController@show_payment_page')->name('qrcodes.show_payment_page');
 
 Route::get('/transactions/{id}', 'TransactionController@show')->name('transactions.show');
+
+Route::get('/print', 'PrintController@print')->name('print');  
+// Route::get('/cetak_pdf', ['uses' => 'TransactionController@cetak_pdf', 'as' => 'transaction.cetak_pdf']);

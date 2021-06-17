@@ -20,10 +20,10 @@
         </div>
         <div class="text-center">
         
-        </div>
+        </div> 
         <div class="col-md-5">
-            <a href="{{ route('transactions.cetak-transaksi') }}" class="btn btn-danger">Convert PDF</a>
-        </div>
+            <a href="{{ route('print') }}" class="btn btn-danger" target="_blank">Convert PDF</a>
+        </div>       
         <br/>
         <br/>
     </div>

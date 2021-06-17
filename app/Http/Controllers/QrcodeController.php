@@ -98,7 +98,7 @@ class QrcodeController extends AppBaseController
         //generate pada qrcode
         //menyimpan barcode dari qrcode
         $file = 'generated_qrcodes/'.$qrcode->id.'.png';    
-        $newQrcode = QRCode::text("message")
+        $newQrcode = QRCode::text("Transaksi Berhasil")
         ->setSize(8)
         ->setMargin(2)
         ->setOutFile($file)

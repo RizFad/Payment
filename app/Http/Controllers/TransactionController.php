@@ -162,11 +162,4 @@ class TransactionController extends AppBaseController
         return redirect(route('transactions.index'));
     }
 
-
-    public function cetakPdf()
-    {
-        $transaction = Transaction::all();
-        $pdf = PDF::loadview('transactions.cetak-transaksi', ['transaction'=>$transaction]);
-        return $pdf->stream();
-    }
 }
