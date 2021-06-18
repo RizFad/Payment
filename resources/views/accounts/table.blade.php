@@ -13,7 +13,7 @@
         <tbody>
         @foreach($accounts as $account)
             <tr>
-                @if (Auth::user()->role_id < 3)
+                @if (Auth::user()->role_id < 4)
                     
                 <td>
                 <a href="{{ route('accounts.show', [$account->id]) }}">
@@ -24,18 +24,13 @@
                 <td>Rp.{{ number_format($account->total_credit) }}</td>
                 <td>Rp.{{ number_format($account->total_debit) }}</td>
                 <td>
-                     @if($account->applied_for_payout == 1)
-                     Payment Pending
-                     @elseif($account->paid == 1)
-                     Paid
-                     @endif
-
+                    <i class="fa fa-check-square text-green"></i>
                 </td>
                 <td>
                     {!! Form::open(['route' => ['accounts.destroy', $account->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{{ route('accounts.edit', [$account->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {{-- {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
                     </div>
                     {!! Form::close() !!}
                 </td>
@@ -62,7 +57,7 @@
                     {!! Form::open(['route' => ['accounts.destroy', $account->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{{ route('accounts.edit', [$account->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {{-- {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
                     </div>
                     {!! Form::close() !!}
                 </td>

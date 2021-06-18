@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1 class="pull-left">Account Histories</h1>
-        @if (Auth::user()->role_id == 1)
+        @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
             
         
         <h1 class="pull-right">

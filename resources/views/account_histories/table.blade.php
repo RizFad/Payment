@@ -4,7 +4,7 @@
             <tr>
                 
                 <th>User</th>
-                <th>Account Id</th>
+                <th>Account</th>
                 <th>Message</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -13,7 +13,7 @@
         @foreach($accountHistories as $accountHistory)
             <tr>
                 <td>{{ $accountHistory->user['email'] }}</td>
-                <td>{{ $accountHistory->account_id }}</td>
+                <td>{{ $accountHistory->account['bank_name'] }}</td>
                 <td>{{ $accountHistory->message }}</td>
                 <td>
                     {!! Form::open(['route' => ['accountHistories.destroy', $accountHistory->id], 'method' => 'delete']) !!}

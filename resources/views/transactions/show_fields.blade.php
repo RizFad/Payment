@@ -24,7 +24,7 @@
             {!! Form::label('amount', 'Pesan:') !!}
             <p><a href="{!! $transaction->qrcode['product_url'] !!}"
                 class="btn btn-success btn-lg"
-                >Kembali Ke Pembayaran</a> </p>
+                >Check Product</a> </p>
         </div>    
     @endif
     

@@ -4,7 +4,7 @@
     {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
 </div>
 
-@if(Auth::user()->role_id==1)
+@if(Auth::user()->role_id < 4)
 <!-- Balance Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('balance', 'Balance:') !!}

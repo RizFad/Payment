@@ -28,6 +28,10 @@
     <li class="{{ Request::is('accounts*') ? 'active' : '' }}">
         <a href="{{ route('accounts.index') }}"><i class="fa fa-credit-card"></i><span>Accounts</span></a>
     </li>
+
+    <li class="{{ Request::is('accountHistories*') ? 'active' : '' }}">
+        <a href="{{ route('accountHistories.index') }}"><i class="fa fa-book"></i><span>Account Histories</span></a>
+    </li>
 @endif
 
 {{-- Supervisor --}}
@@ -35,10 +39,7 @@
     <li class="{{ Request::is('users*') ? 'active' : '' }}">
         <a href="{{ route('users.index') }}"><i class="fa fa-users"></i><span>Users</span></a>
     </li>
-
-    <li class="{{ Request::is('accountHistories*') ? 'active' : '' }}">
-        <a href="{{ route('accountHistories.index') }}"><i class="fa fa-book"></i><span>Account Histories</span></a>
-    </li>
+    
 @endif
     
 {{-- Admin --}}

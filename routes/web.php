@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,14 +36,13 @@ Route::group(['middleware'=>'auth'], function () {
     
 });
 
-Route::post('/accounts/apply_for_payout', 'AccountController@apply_for_payout')->name('accounts.apply_for_payout');
-Route::post('/accounts/mark_as_paid', 'AccountController@mark_as_paid')->name('accounts.mark_as_paid');
+
 
 Route::get('/account/create', 'AccountController@create')
-->name('accounts.create')->middleware('checkadmin');
+->name('accounts.create');
 
 Route::get('/accountHistories/create', 'AccountHistoryController@create')
-->name('accountHistories.create')->middleware('checkadmin');
+->name('accountHistories.create');
 
 // route ini dapat diakses walaupun sudah di log out
 Route::get("/qrcodes/{id}", 'QrcodeController@show')->name('qrcodes.show');
@@ -55,4 +54,4 @@ Route::post('/qrcodes/show_payment_page', 'QrcodeController@show_payment_page')-
 Route::get('/transactions/{id}', 'TransactionController@show')->name('transactions.show');
 
 Route::get('/print', 'PrintController@print')->name('print');  
-// Route::get('/cetak_pdf', ['uses' => 'TransactionController@cetak_pdf', 'as' => 'transaction.cetak_pdf']);
+

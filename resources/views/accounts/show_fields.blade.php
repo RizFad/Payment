@@ -67,18 +67,7 @@
         {!! Form::label('country', 'Country:') !!}
         <p>{{ $account->country }}</p>
     </div>
-
-    <!-- Last Date Paid Field -->
-    <div class="form-group">
-        {!! Form::label('last_date_paid', 'Last Date Paid:') !!}
-        <p>{{ $account->last_date_paid }}</p>
-    </div>
-
-    <!-- Last Date Applied Field -->
-    <div class="form-group">
-        {!! Form::label('last_date_applied', 'Last Date Applied:') !!}
-        <p>{{ $account->last_date_applied }}</p>
-    </div>
+ 
 
     <!-- Other Details Field -->
     <div class="form-group">
