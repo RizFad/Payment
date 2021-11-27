@@ -1,7 +1,7 @@
 name: automation deploy
 on:
   release:
-    types: [published]
+    types: [push]
 
 jobs:
   build:
